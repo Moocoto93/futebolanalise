@@ -16,30 +16,43 @@ export const parseCSV = async (url: string): Promise<FootballMatch[]> => {
   try {
     const response = await fetch(url);
     const text = await response.text();
-    const lines = text.split('\n');
-    const headers = lines[0].split(',');
+    const lines = text.split('\n').filter(line => line.trim());
+    
+    if (lines.length < 2) {
+      console.error('CSV file is empty or invalid');
+      return [];
+    }
+    
+    const headers = lines[0].split(',').map(h => h.trim());
+    console.log('CSV Headers:', headers);
     
     const matches: FootballMatch[] = [];
     
     for (let i = 1; i < lines.length; i++) {
-      if (!lines[i].trim()) continue;
-      
       const values = lines[i].split(',');
       const match: any = {};
       
       headers.forEach((header, index) => {
-        match[header.trim()] = values[index]?.trim() || '';
+        match[header] = values[index]?.trim() || '';
       });
       
-      // Convert numeric fields
+      // Validate required fields
+      if (!match.HomeTeam || !match.AwayTeam) {
+        continue;
+      }
+      
+      // Convert numeric fields safely
       match.FTHG = parseInt(match.FTHG) || 0;
       match.FTAG = parseInt(match.FTAG) || 0;
       match.HTHG = parseInt(match.HTHG) || 0;
       match.HTAG = parseInt(match.HTAG) || 0;
       
-      if (match.HomeTeam && match.AwayTeam) {
-        matches.push(match as FootballMatch);
-      }
+      matches.push(match as FootballMatch);
+    }
+    
+    console.log(`Parsed ${matches.length} matches`);
+    if (matches.length > 0) {
+      console.log('Sample match:', matches[0]);
     }
     
     return matches;

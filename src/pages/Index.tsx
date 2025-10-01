@@ -17,22 +17,36 @@ const Index = () => {
     const loadData = async () => {
       try {
         const data = await parseCSV("https://www.football-data.co.uk/mmz4281/2526/E0.csv");
+        
+        if (data.length === 0) {
+          toast({
+            title: "Aviso",
+            description: "Nenhum dado foi carregado. Pode haver um problema de CORS ou o arquivo está vazio.",
+            variant: "destructive",
+          });
+          setLoading(false);
+          return;
+        }
+        
         setMatches(data);
         
         // Get unique teams and select all by default
         const uniqueTeams = Array.from(
           new Set([...data.map(m => m.HomeTeam), ...data.map(m => m.AwayTeam)])
-        ).sort();
+        ).filter(Boolean).sort();
+        
+        console.log('Unique teams found:', uniqueTeams);
         setSelectedTeams(uniqueTeams);
         
         toast({
           title: "Dados carregados!",
-          description: `${data.length} jogos analisados com sucesso.`,
+          description: `${data.length} jogos e ${uniqueTeams.length} times encontrados.`,
         });
       } catch (error) {
+        console.error('Error loading data:', error);
         toast({
           title: "Erro ao carregar dados",
-          description: "Não foi possível carregar os dados de futebol.",
+          description: "Não foi possível carregar os dados de futebol. Verifique o console para mais detalhes.",
           variant: "destructive",
         });
       } finally {
@@ -47,10 +61,12 @@ const Index = () => {
   const allTeams = useMemo(() => {
     const teams = new Set<string>();
     matches.forEach(m => {
-      teams.add(m.HomeTeam);
-      teams.add(m.AwayTeam);
+      if (m.HomeTeam) teams.add(m.HomeTeam);
+      if (m.AwayTeam) teams.add(m.AwayTeam);
     });
-    return Array.from(teams).sort();
+    const sortedTeams = Array.from(teams).sort();
+    console.log('All teams extracted:', sortedTeams);
+    return sortedTeams;
   }, [matches]);
 
   // Filter matches by selected teams
