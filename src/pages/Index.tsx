@@ -6,25 +6,28 @@ import { PatternChart } from "@/components/PatternChart";
 import { TeamSelector } from "@/components/TeamSelector";
 import { MatchupSelector } from "@/components/MatchupSelector";
 import { MatchupAnalysis } from "@/components/MatchupAnalysis";
+import { LeagueSelector, LEAGUES } from "@/components/LeagueSelector";
 import { parseCSV, analyzePatterns, getTeamStats, FootballMatch } from "@/utils/csvParser";
 import { useToast } from "@/components/ui/use-toast";
 
 const Index = () => {
   const [matches, setMatches] = useState<FootballMatch[]>([]);
   const [loading, setLoading] = useState(true);
+  const [selectedLeague, setSelectedLeague] = useState("E0");
   const [selectedTeams, setSelectedTeams] = useState<string[]>([]);
   const [matchup, setMatchup] = useState<{ team1: string; team2: string } | null>(null);
   const { toast } = useToast();
 
   useEffect(() => {
     const loadData = async () => {
+      setLoading(true);
       try {
-        const data = await parseCSV("/data/E0.csv");
+        const data = await parseCSV(`/data/${selectedLeague}.csv`);
         
         if (data.length === 0) {
           toast({
             title: "Aviso",
-            description: "Nenhum dado foi carregado. Pode haver um problema de CORS ou o arquivo está vazio.",
+            description: "Nenhum dado foi carregado.",
             variant: "destructive",
           });
           setLoading(false);
@@ -39,16 +42,18 @@ const Index = () => {
         ).filter(Boolean).sort();
         
         setSelectedTeams(uniqueTeams);
+        setMatchup(null); // Reset matchup when changing league
         
+        const currentLeague = LEAGUES.find(l => l.id === selectedLeague);
         toast({
           title: "Dados carregados!",
-          description: `${data.length} jogos e ${uniqueTeams.length} times encontrados.`,
+          description: `${currentLeague?.name}: ${data.length} jogos e ${uniqueTeams.length} times encontrados.`,
         });
       } catch (error) {
         console.error('Error loading data:', error);
         toast({
           title: "Erro ao carregar dados",
-          description: "Não foi possível carregar os dados de futebol. Verifique o console para mais detalhes.",
+          description: "Não foi possível carregar os dados de futebol.",
           variant: "destructive",
         });
       } finally {
@@ -57,7 +62,7 @@ const Index = () => {
     };
 
     loadData();
-  }, []);
+  }, [selectedLeague]);
 
   // Get all unique teams
   const allTeams = useMemo(() => {
@@ -125,14 +130,24 @@ const Index = () => {
               <Trophy className="w-6 h-6 text-primary-foreground" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold">Análise de Padrões - Premier League</h1>
-              <p className="text-sm text-muted-foreground">Temporada 2025/26</p>
+              <h1 className="text-2xl font-bold">Análise de Padrões em Futebol</h1>
+              <p className="text-sm text-muted-foreground">
+                {LEAGUES.find(l => l.id === selectedLeague)?.name} - Temporada 2025/26
+              </p>
             </div>
           </div>
         </div>
       </header>
 
       <main className="container mx-auto px-4 py-8 space-y-8">
+        {/* League Selector */}
+        <section>
+          <LeagueSelector
+            selectedLeague={selectedLeague}
+            onLeagueChange={setSelectedLeague}
+          />
+        </section>
+
         {/* Matchup Analysis */}
         <section>
           <MatchupSelector
