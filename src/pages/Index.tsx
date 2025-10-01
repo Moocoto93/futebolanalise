@@ -4,6 +4,8 @@ import { StatsCard } from "@/components/StatsCard";
 import { MatchTable, Match } from "@/components/MatchTable";
 import { PatternChart } from "@/components/PatternChart";
 import { TeamSelector } from "@/components/TeamSelector";
+import { MatchupSelector } from "@/components/MatchupSelector";
+import { MatchupAnalysis } from "@/components/MatchupAnalysis";
 import { parseCSV, analyzePatterns, getTeamStats, FootballMatch } from "@/utils/csvParser";
 import { useToast } from "@/components/ui/use-toast";
 
@@ -11,6 +13,7 @@ const Index = () => {
   const [matches, setMatches] = useState<FootballMatch[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedTeams, setSelectedTeams] = useState<string[]>([]);
+  const [matchup, setMatchup] = useState<{ team1: string; team2: string } | null>(null);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -74,6 +77,14 @@ const Index = () => {
     );
   }, [matches, selectedTeams]);
 
+  const handleMatchupSelected = (team1: string, team2: string) => {
+    setMatchup({ team1, team2 });
+    toast({
+      title: "Analisando confronto",
+      description: `${team1} vs ${team2}`,
+    });
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
@@ -122,6 +133,24 @@ const Index = () => {
       </header>
 
       <main className="container mx-auto px-4 py-8 space-y-8">
+        {/* Matchup Analysis */}
+        <section>
+          <MatchupSelector
+            teams={allTeams}
+            onMatchupSelected={handleMatchupSelected}
+          />
+        </section>
+
+        {matchup && (
+          <section>
+            <MatchupAnalysis
+              team1={matchup.team1}
+              team2={matchup.team2}
+              matches={matches}
+            />
+          </section>
+        )}
+
         {/* Team Selector */}
         <section>
           <TeamSelector
