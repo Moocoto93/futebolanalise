@@ -20,9 +20,6 @@ interface TeamSelectorProps {
 export const TeamSelector = ({ teams, selectedTeams, onSelectionChange }: TeamSelectorProps) => {
   const [open, setOpen] = useState(false);
 
-  console.log('TeamSelector - teams:', teams);
-  console.log('TeamSelector - selectedTeams:', selectedTeams);
-
   const toggleTeam = (team: string) => {
     if (selectedTeams.includes(team)) {
       onSelectionChange(selectedTeams.filter(t => t !== team));

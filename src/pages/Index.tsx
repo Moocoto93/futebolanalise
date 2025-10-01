@@ -16,7 +16,7 @@ const Index = () => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const data = await parseCSV("https://www.football-data.co.uk/mmz4281/2526/E0.csv");
+        const data = await parseCSV("/data/E0.csv");
         
         if (data.length === 0) {
           toast({
@@ -35,7 +35,6 @@ const Index = () => {
           new Set([...data.map(m => m.HomeTeam), ...data.map(m => m.AwayTeam)])
         ).filter(Boolean).sort();
         
-        console.log('Unique teams found:', uniqueTeams);
         setSelectedTeams(uniqueTeams);
         
         toast({
@@ -64,9 +63,7 @@ const Index = () => {
       if (m.HomeTeam) teams.add(m.HomeTeam);
       if (m.AwayTeam) teams.add(m.AwayTeam);
     });
-    const sortedTeams = Array.from(teams).sort();
-    console.log('All teams extracted:', sortedTeams);
-    return sortedTeams;
+    return Array.from(teams).sort();
   }, [matches]);
 
   // Filter matches by selected teams

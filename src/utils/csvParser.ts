@@ -19,13 +19,10 @@ export const parseCSV = async (url: string): Promise<FootballMatch[]> => {
     const lines = text.split('\n').filter(line => line.trim());
     
     if (lines.length < 2) {
-      console.error('CSV file is empty or invalid');
       return [];
     }
     
     const headers = lines[0].split(',').map(h => h.trim());
-    console.log('CSV Headers:', headers);
-    
     const matches: FootballMatch[] = [];
     
     for (let i = 1; i < lines.length; i++) {
@@ -48,11 +45,6 @@ export const parseCSV = async (url: string): Promise<FootballMatch[]> => {
       match.HTAG = parseInt(match.HTAG) || 0;
       
       matches.push(match as FootballMatch);
-    }
-    
-    console.log(`Parsed ${matches.length} matches`);
-    if (matches.length > 0) {
-      console.log('Sample match:', matches[0]);
     }
     
     return matches;
