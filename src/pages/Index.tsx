@@ -1,14 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { Trophy, TrendingUp, Target, Activity } from "lucide-react";
 import { StatsCard } from "@/components/StatsCard";
 import { MatchTable, Match } from "@/components/MatchTable";
 import { PatternChart } from "@/components/PatternChart";
+import { TeamSelector } from "@/components/TeamSelector";
 import { parseCSV, analyzePatterns, getTeamStats, FootballMatch } from "@/utils/csvParser";
 import { useToast } from "@/components/ui/use-toast";
 
 const Index = () => {
   const [matches, setMatches] = useState<FootballMatch[]>([]);
   const [loading, setLoading] = useState(true);
+  const [selectedTeams, setSelectedTeams] = useState<string[]>([]);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -16,6 +18,13 @@ const Index = () => {
       try {
         const data = await parseCSV("https://www.football-data.co.uk/mmz4281/2526/E0.csv");
         setMatches(data);
+        
+        // Get unique teams and select all by default
+        const uniqueTeams = Array.from(
+          new Set([...data.map(m => m.HomeTeam), ...data.map(m => m.AwayTeam)])
+        ).sort();
+        setSelectedTeams(uniqueTeams);
+        
         toast({
           title: "Dados carregados!",
           description: `${data.length} jogos analisados com sucesso.`,
@@ -34,6 +43,24 @@ const Index = () => {
     loadData();
   }, []);
 
+  // Get all unique teams
+  const allTeams = useMemo(() => {
+    const teams = new Set<string>();
+    matches.forEach(m => {
+      teams.add(m.HomeTeam);
+      teams.add(m.AwayTeam);
+    });
+    return Array.from(teams).sort();
+  }, [matches]);
+
+  // Filter matches by selected teams
+  const filteredMatches = useMemo(() => {
+    if (selectedTeams.length === 0) return matches;
+    return matches.filter(m => 
+      selectedTeams.includes(m.HomeTeam) || selectedTeams.includes(m.AwayTeam)
+    );
+  }, [matches, selectedTeams]);
+
   if (loading) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
@@ -45,9 +72,9 @@ const Index = () => {
     );
   }
 
-  const stats = analyzePatterns(matches);
-  const teamStats = getTeamStats(matches);
-  const recentMatches: Match[] = matches.slice(0, 10).map(m => ({
+  const stats = analyzePatterns(filteredMatches);
+  const teamStats = getTeamStats(filteredMatches);
+  const recentMatches: Match[] = filteredMatches.slice(0, 10).map(m => ({
     date: m.Date,
     homeTeam: m.HomeTeam,
     awayTeam: m.AwayTeam,
@@ -82,6 +109,15 @@ const Index = () => {
       </header>
 
       <main className="container mx-auto px-4 py-8 space-y-8">
+        {/* Team Selector */}
+        <section>
+          <TeamSelector
+            teams={allTeams}
+            selectedTeams={selectedTeams}
+            onSelectionChange={setSelectedTeams}
+          />
+        </section>
+
         {/* Stats Overview */}
         <section>
           <h2 className="text-xl font-bold mb-4">Estatísticas Gerais</h2>
