@@ -15,7 +15,7 @@ const Index = () => {
   const [loading, setLoading] = useState(true);
   const [selectedLeague, setSelectedLeague] = useState("E0");
   const [selectedTeams, setSelectedTeams] = useState<string[]>([]);
-  const [matchup, setMatchup] = useState<{ team1: string; team2: string } | null>(null);
+  const [matchup, setMatchup] = useState<{ homeTeam: string; awayTeam: string; lastNGames: number } | null>(null);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -82,11 +82,11 @@ const Index = () => {
     );
   }, [matches, selectedTeams]);
 
-  const handleMatchupSelected = (team1: string, team2: string) => {
-    setMatchup({ team1, team2 });
+  const handleMatchupSelected = (homeTeam: string, awayTeam: string, lastNGames: number) => {
+    setMatchup({ homeTeam, awayTeam, lastNGames });
     toast({
       title: "Analisando confronto",
-      description: `${team1} vs ${team2}`,
+      description: `${homeTeam} (Casa) vs ${awayTeam} (Fora) - Últimos ${lastNGames} jogos`,
     });
   };
 
@@ -159,9 +159,10 @@ const Index = () => {
         {matchup && (
           <section>
             <MatchupAnalysis
-              team1={matchup.team1}
-              team2={matchup.team2}
+              homeTeam={matchup.homeTeam}
+              awayTeam={matchup.awayTeam}
               matches={matches}
+              lastNGames={matchup.lastNGames}
             />
           </section>
         )}

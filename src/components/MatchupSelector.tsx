@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-import { Sword } from "lucide-react";
+import { Sword, Home, Plane } from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -10,19 +10,24 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 interface MatchupSelectorProps {
   teams: string[];
-  onMatchupSelected: (team1: string, team2: string) => void;
+  onMatchupSelected: (homeTeam: string, awayTeam: string, lastNGames: number) => void;
 }
 
 export const MatchupSelector = ({ teams, onMatchupSelected }: MatchupSelectorProps) => {
   const [team1, setTeam1] = useState<string>("");
   const [team2, setTeam2] = useState<string>("");
+  const [homeAway, setHomeAway] = useState<"1home" | "2home">("1home");
+  const [lastNGames, setLastNGames] = useState<string>("5");
 
   const handleAnalyze = () => {
     if (team1 && team2 && team1 !== team2) {
-      onMatchupSelected(team1, team2);
+      const homeTeam = homeAway === "1home" ? team1 : team2;
+      const awayTeam = homeAway === "1home" ? team2 : team1;
+      onMatchupSelected(homeTeam, awayTeam, parseInt(lastNGames));
     }
   };
 
@@ -68,6 +73,49 @@ export const MatchupSelector = ({ teams, onMatchupSelected }: MatchupSelectorPro
                   {team}
                 </SelectItem>
               ))}
+            </SelectContent>
+          </Select>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+        <div className="space-y-2">
+          <Label>Situação Casa/Fora</Label>
+          <RadioGroup value={homeAway} onValueChange={(value) => setHomeAway(value as "1home" | "2home")}>
+            <div className="flex items-center space-x-2 p-3 rounded-lg border bg-card">
+              <RadioGroupItem value="1home" id="1home" />
+              <Label htmlFor="1home" className="flex items-center gap-2 cursor-pointer flex-1">
+                <Home className="w-4 h-4 text-primary" />
+                <span>{team1 || "Time 1"} em Casa</span>
+                <span className="text-muted-foreground">vs</span>
+                <Plane className="w-4 h-4 text-secondary" />
+                <span>{team2 || "Time 2"} Fora</span>
+              </Label>
+            </div>
+            <div className="flex items-center space-x-2 p-3 rounded-lg border bg-card">
+              <RadioGroupItem value="2home" id="2home" />
+              <Label htmlFor="2home" className="flex items-center gap-2 cursor-pointer flex-1">
+                <Plane className="w-4 h-4 text-secondary" />
+                <span>{team1 || "Time 1"} Fora</span>
+                <span className="text-muted-foreground">vs</span>
+                <Home className="w-4 h-4 text-primary" />
+                <span>{team2 || "Time 2"} em Casa</span>
+              </Label>
+            </div>
+          </RadioGroup>
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="lastNGames">Quantidade de Jogos para Análise</Label>
+          <Select value={lastNGames} onValueChange={setLastNGames}>
+            <SelectTrigger id="lastNGames" className="bg-background">
+              <SelectValue placeholder="Selecione a quantidade" />
+            </SelectTrigger>
+            <SelectContent className="bg-popover z-50">
+              <SelectItem value="3">Últimos 3 jogos</SelectItem>
+              <SelectItem value="5">Últimos 5 jogos</SelectItem>
+              <SelectItem value="7">Últimos 7 jogos</SelectItem>
+              <SelectItem value="9">Últimos 9 jogos</SelectItem>
             </SelectContent>
           </Select>
         </div>
