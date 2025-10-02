@@ -22,6 +22,7 @@ export const LEAGUES: League[] = [
   { id: "I1", name: "Serie A", country: "Itália", flag: "🇮🇹" },
   { id: "D1", name: "Bundesliga", country: "Alemanha", flag: "🇩🇪" },
   { id: "P1", name: "Primeira Liga", country: "Portugal", flag: "🇵🇹" },
+  { id: "BRA", name: "Brasileirão Série A", country: "Brasil", flag: "🇧🇷" },
 ];
 
 interface LeagueSelectorProps {

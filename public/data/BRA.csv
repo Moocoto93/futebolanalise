@@ -1,0 +1,243 @@
+Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR
+29/3/2025,Cruzeiro,Mirassol,2,1,H
+29/3/2025,Fortaleza,Fluminense,2,0,H
+29/3/2025,Gremio,Atletico-MG,2,1,H
+29/3/2025,Juventude,Vitoria,2,0,H
+29/3/2025,Sao Paulo,Sport Recife,0,0,D
+30/3/2025,Flamengo RJ,Internacional,1,1,D
+30/3/2025,Palmeiras,Botafogo RJ,0,0,D
+30/3/2025,Vasco,Santos,2,1,H
+31/3/2025,Bahia,Corinthians,1,1,D
+1/4/2025,Bragantino,Ceara,2,2,D
+5/4/2025,Ceara,Gremio,2,0,H
+5/4/2025,Corinthians,Vasco,3,0,H
+6/4/2025,Botafogo RJ,Juventude,2,0,H
+6/4/2025,Atletico-MG,Sao Paulo,0,0,D
+6/4/2025,Fluminense,Bragantino,2,1,H
+6/4/2025,Internacional,Cruzeiro,3,0,H
+6/4/2025,Mirassol,Fortaleza,1,1,D
+6/4/2025,Sport Recife,Palmeiras,1,2,A
+6/4/2025,Vitoria,Flamengo RJ,1,2,A
+7/4/2025,Santos,Bahia,2,2,D
+12/4/2025,Bragantino,Botafogo RJ,1,0,H
+12/4/2025,Juventude,Ceara,2,1,H
+12/4/2025,Palmeiras,Corinthians,2,0,H
+13/4/2025,Vasco,Sport Recife,3,1,H
+13/4/2025,Bahia,Mirassol,1,1,D
+13/4/2025,Gremio,Flamengo RJ,0,2,A
+13/4/2025,Sao Paulo,Cruzeiro,1,1,D
+13/4/2025,Fluminense,Santos,1,0,H
+14/4/2025,Fortaleza,Internacional,0,0,D
+14/4/2025,Atletico-MG,Vitoria,2,2,D
+16/4/2025,Ceara,Vasco,2,1,H
+16/4/2025,Botafogo RJ,Sao Paulo,2,2,D
+16/4/2025,Mirassol,Gremio,4,1,H
+16/4/2025,Sport Recife,Bragantino,0,1,A
+16/4/2025,Corinthians,Fluminense,0,2,A
+16/4/2025,Internacional,Palmeiras,0,1,A
+17/4/2025,Flamengo RJ,Juventude,6,0,H
+17/4/2025,Santos,Atletico-MG,2,0,H
+17/4/2025,Vitoria,Fortaleza,2,1,H
+18/4/2025,Cruzeiro,Bahia,3,0,H
+19/4/2025,Corinthians,Sport Recife,2,1,H
+19/4/2025,Vasco,Flamengo RJ,0,0,D
+20/4/2025,Gremio,Internacional,1,1,D
+20/4/2025,Juventude,Mirassol,2,2,D
+20/4/2025,Atletico-MG,Botafogo RJ,1,0,H
+20/4/2025,Sao Paulo,Santos,2,1,H
+20/4/2025,Fluminense,Vitoria,1,1,D
+20/4/2025,Fortaleza,Palmeiras,1,2,A
+21/4/2025,Bragantino,Cruzeiro,1,0,H
+22/4/2025,Bahia,Ceara,1,0,H
+26/4/2025,Internacional,Juventude,3,1,H
+26/4/2025,Ceara,Sao Paulo,1,1,D
+26/4/2025,Mirassol,Atletico-MG,2,2,D
+27/4/2025,Sport Recife,Fortaleza,0,0,D
+27/4/2025,Botafogo RJ,Fluminense,2,0,H
+27/4/2025,Flamengo RJ,Corinthians,4,0,H
+27/4/2025,Cruzeiro,Vasco,1,0,H
+27/4/2025,Palmeiras,Bahia,0,1,A
+27/4/2025,Vitoria,Gremio,1,1,D
+28/4/2025,Santos,Bragantino,1,2,A
+3/5/2025,Sao Paulo,Fortaleza,0,0,D
+3/5/2025,Ceara,Vitoria,1,0,H
+3/5/2025,Corinthians,Internacional,4,2,H
+3/5/2025,Fluminense,Sport Recife,2,1,H
+4/5/2025,Bahia,Botafogo RJ,1,0,H
+4/5/2025,Gremio,Santos,1,0,H
+4/5/2025,Vasco,Palmeiras,0,1,A
+4/5/2025,Cruzeiro,Flamengo RJ,2,1,H
+5/5/2025,Bragantino,Mirassol,1,0,H
+6/5/2025,Juventude,Atletico-MG,0,1,A
+10/5/2025,Fortaleza,Juventude,5,0,H
+10/5/2025,Gremio,Bragantino,1,1,D
+10/5/2025,Mirassol,Corinthians,2,1,H
+10/5/2025,Vitoria,Vasco,2,1,H
+11/5/2025,Flamengo RJ,Bahia,1,0,H
+11/5/2025,Sport Recife,Cruzeiro,0,4,A
+11/5/2025,Atletico-MG,Fluminense,3,2,H
+11/5/2025,Palmeiras,Sao Paulo,1,0,H
+12/5/2025,Botafogo RJ,Internacional,4,0,H
+13/5/2025,Santos,Ceara,0,0,D
+17/5/2025,Ceara,Sport Recife,2,0,H
+17/5/2025,Vasco,Fortaleza,3,0,H
+18/5/2025,Sao Paulo,Gremio,2,1,H
+18/5/2025,Bahia,Vitoria,2,1,H
+18/5/2025,Corinthians,Santos,1,0,H
+18/5/2025,Juventude,Fluminense,1,1,D
+18/5/2025,Bragantino,Palmeiras,1,2,A
+18/5/2025,Flamengo RJ,Botafogo RJ,0,0,D
+19/5/2025,Cruzeiro,Atletico-MG,0,0,D
+19/5/2025,Internacional,Mirassol,1,1,D
+24/5/2025,Fluminense,Vasco,2,1,H
+24/5/2025,Sao Paulo,Mirassol,0,2,A
+25/5/2025,Atletico-MG,Corinthians,0,0,D
+25/5/2025,Gremio,Bahia,1,0,H
+25/5/2025,Palmeiras,Flamengo RJ,0,2,A
+25/5/2025,Sport Recife,Internacional,1,1,D
+25/5/2025,Vitoria,Santos,0,1,A
+26/5/2025,Fortaleza,Cruzeiro,0,2,A
+27/5/2025,Bragantino,Juventude,1,0,H
+31/5/2025,Bahia,Sao Paulo,2,1,H
+1/6/2025,Vasco,Bragantino,0,2,A
+1/6/2025,Mirassol,Sport Recife,1,0,H
+1/6/2025,Juventude,Gremio,0,2,A
+1/6/2025,Santos,Botafogo RJ,0,1,A
+1/6/2025,Ceara,Atletico-MG,0,1,A
+1/6/2025,Corinthians,Vitoria,0,0,D
+1/6/2025,Flamengo RJ,Fortaleza,5,0,H
+1/6/2025,Cruzeiro,Palmeiras,2,1,H
+2/6/2025,Internacional,Fluminense,0,2,A
+5/6/2025,Botafogo RJ,Ceara,3,2,H
+12/6/2025,Bragantino,Bahia,0,3,A
+12/6/2025,Vitoria,Cruzeiro,0,0,D
+12/6/2025,Fortaleza,Santos,2,3,A
+13/6/2025,Gremio,Corinthians,1,1,D
+13/6/2025,Atletico-MG,Internacional,2,0,H
+13/6/2025,Sao Paulo,Vasco,1,3,A
+12/7/2025,Flamengo RJ,Sao Paulo,2,0,H
+12/7/2025,Internacional,Vitoria,1,0,H
+12/7/2025,Vasco,Botafogo RJ,0,2,A
+13/7/2025,Bahia,Atletico-MG,2,1,H
+13/7/2025,Corinthians,Bragantino,1,2,A
+14/7/2025,Cruzeiro,Gremio,4,1,H
+14/7/2025,Fortaleza,Ceara,0,1,A
+15/7/2025,Juventude,Sport Recife,2,0,H
+16/7/2025,Palmeiras,Mirassol,1,1,D
+16/7/2025,Ceara,Corinthians,0,1,A
+17/7/2025,Santos,Flamengo RJ,1,0,H
+17/7/2025,Botafogo RJ,Vitoria,0,0,D
+17/7/2025,Bragantino,Sao Paulo,2,2,D
+17/7/2025,Fluminense,Cruzeiro,0,2,A
+19/7/2025,Fortaleza,Bahia,1,1,D
+19/7/2025,Vasco,Gremio,1,1,D
+19/7/2025,Mirassol,Santos,3,0,H
+20/7/2025,Sao Paulo,Corinthians,2,0,H
+20/7/2025,Internacional,Ceara,1,0,H
+20/7/2025,Cruzeiro,Juventude,4,0,H
+20/7/2025,Vitoria,Bragantino,1,0,H
+20/7/2025,Palmeiras,Atletico-MG,3,2,H
+20/7/2025,Sport Recife,Botafogo RJ,0,1,A
+20/7/2025,Flamengo RJ,Fluminense,1,0,H
+23/7/2025,Ceara,Mirassol,0,2,A
+23/7/2025,Fluminense,Palmeiras,1,2,A
+23/7/2025,Corinthians,Cruzeiro,0,0,D
+24/7/2025,Bragantino,Flamengo RJ,1,2,A
+24/7/2025,Santos,Internacional,1,2,A
+24/7/2025,Vitoria,Sport Recife,2,2,D
+24/7/2025,Juventude,Sao Paulo,0,1,A
+26/7/2025,Botafogo RJ,Corinthians,1,1,D
+26/7/2025,Fortaleza,Bragantino,3,1,H
+26/7/2025,Mirassol,Vitoria,1,1,D
+26/7/2025,Sport Recife,Santos,2,2,D
+27/7/2025,Palmeiras,Gremio,1,0,H
+27/7/2025,Cruzeiro,Ceara,1,2,A
+27/7/2025,Sao Paulo,Fluminense,3,1,H
+27/7/2025,Bahia,Juventude,3,0,H
+27/7/2025,Internacional,Vasco,1,1,D
+28/7/2025,Flamengo RJ,Atletico-MG,1,0,H
+30/7/2025,Gremio,Fortaleza,2,1,H
+2/8/2025,Sport Recife,Bahia,0,0,D
+2/8/2025,Mirassol,Vasco,3,2,H
+3/8/2025,Fluminense,Gremio,1,0,H
+3/8/2025,Botafogo RJ,Cruzeiro,0,2,A
+3/8/2025,Corinthians,Fortaleza,1,1,D
+3/8/2025,Atletico-MG,Bragantino,2,1,H
+3/8/2025,Ceara,Flamengo RJ,1,1,D
+3/8/2025,Vitoria,Palmeiras,2,2,D
+4/8/2025,Internacional,Sao Paulo,1,2,A
+5/8/2025,Santos,Juventude,3,1,H
+9/8/2025,Bragantino,Internacional,1,3,A
+9/8/2025,Flamengo RJ,Mirassol,2,1,H
+9/8/2025,Sao Paulo,Vitoria,2,0,H
+10/8/2025,Fortaleza,Botafogo RJ,0,5,A
+10/8/2025,Bahia,Fluminense,3,3,D
+10/8/2025,Palmeiras,Ceara,2,1,H
+10/8/2025,Vasco,Atletico-MG,1,1,D
+10/8/2025,Cruzeiro,Santos,1,2,A
+11/8/2025,Gremio,Sport Recife,0,1,A
+12/8/2025,Juventude,Corinthians,2,1,H
+16/8/2025,Ceara,Bragantino,1,0,H
+16/8/2025,Fluminense,Fortaleza,2,1,H
+16/8/2025,Sport Recife,Sao Paulo,2,2,D
+16/8/2025,Vitoria,Juventude,2,2,D
+17/8/2025,Corinthians,Bahia,1,2,A
+17/8/2025,Atletico-MG,Gremio,1,3,A
+17/8/2025,Santos,Vasco,0,6,A
+17/8/2025,Internacional,Flamengo RJ,1,3,A
+18/8/2025,Botafogo RJ,Palmeiras,0,1,A
+19/8/2025,Mirassol,Cruzeiro,1,1,D
+20/8/2025,Juventude,Vasco,2,0,H
+23/8/2025,Bragantino,Fluminense,4,2,H
+23/8/2025,Cruzeiro,Internacional,2,1,H
+24/8/2025,Gremio,Ceara,0,0,D
+24/8/2025,Bahia,Santos,2,0,H
+24/8/2025,Vasco,Corinthians,2,3,A
+24/8/2025,Fortaleza,Mirassol,0,1,A
+24/8/2025,Juventude,Botafogo RJ,1,3,A
+25/8/2025,Sao Paulo,Atletico-MG,2,0,H
+25/8/2025,Palmeiras,Sport Recife,3,0,H
+26/8/2025,Flamengo RJ,Vitoria,8,0,H
+30/8/2025,Ceara,Juventude,0,1,A
+30/8/2025,Botafogo RJ,Bragantino,4,1,H
+31/8/2025,Cruzeiro,Sao Paulo,1,0,H
+31/8/2025,Flamengo RJ,Gremio,1,1,D
+31/8/2025,Santos,Fluminense,0,0,D
+31/8/2025,Corinthians,Palmeiras,1,1,D
+31/8/2025,Mirassol,Bahia,5,1,H
+31/8/2025,Vitoria,Atletico-MG,1,0,H
+1/9/2025,Internacional,Fortaleza,2,1,H
+1/9/2025,Sport Recife,Vasco,2,3,A
+13/9/2025,Fortaleza,Vitoria,2,0,H
+13/9/2025,Gremio,Mirassol,0,1,A
+13/9/2025,Palmeiras,Internacional,4,1,H
+14/9/2025,Fluminense,Corinthians,0,1,A
+14/9/2025,Bragantino,Sport Recife,1,1,D
+14/9/2025,Atletico-MG,Santos,1,1,D
+14/9/2025,Juventude,Flamengo RJ,0,2,A
+14/9/2025,Sao Paulo,Botafogo RJ,1,0,H
+15/9/2025,Vasco,Ceara,2,2,D
+16/9/2025,Bahia,Cruzeiro,1,2,A
+17/9/2025,Botafogo RJ,Mirassol,3,3,D
+20/9/2025,Vitoria,Fluminense,0,1,A
+20/9/2025,Botafogo RJ,Atletico-MG,1,0,H
+20/9/2025,Ceara,Bahia,1,1,D
+21/9/2025,Palmeiras,Fortaleza,4,1,H
+21/9/2025,Mirassol,Juventude,2,0,H
+21/9/2025,Flamengo RJ,Vasco,1,1,D
+21/9/2025,Internacional,Gremio,2,3,A
+21/9/2025,Sport Recife,Corinthians,1,0,H
+22/9/2025,Cruzeiro,Bragantino,2,1,H
+22/9/2025,Santos,Sao Paulo,1,0,H
+24/9/2025,Gremio,Botafogo RJ,1,1,D
+24/9/2025,Vasco,Bahia,3,1,H
+27/9/2025,Fortaleza,Sport Recife,1,0,H
+27/9/2025,Juventude,Internacional,1,1,D
+27/9/2025,Vasco,Cruzeiro,2,0,H
+28/9/2025,Atletico-MG,Mirassol,1,0,H
+28/9/2025,Gremio,Vitoria,3,1,H
+28/9/2025,Bahia,Palmeiras,1,0,H
+28/9/2025,Fluminense,Botafogo RJ,2,0,H
+28/9/2025,Bragantino,Santos,2,2,D
+29/9/2025,Corinthians,Flamengo RJ,1,2,A
+30/9/2025,Sao Paulo,Ceara,0,1,A
